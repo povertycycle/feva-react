@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import "tailwindcss";
+@theme {
+    --font-roboto: "Roboto", sans-serif;
+    --color-green-success: #007e50;
+    --color-blue-info: #0469e3;
+    --color-red-error: #bb0202;
+}
+
+// Initalizer for custom default sizing.
+html,
+body,
+body > header {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    overflow: hidden;
+    background-color: black;
+    scroll-behavior: smooth;
+    touch-action: none;
+}
+
+@media only screen and (max-width: 640px) {
+    [data-mobiletext] > span {
+        display: none;
+    }
+
+    [data-mobiletext]::before {
+        content: attr(data-mobiletext);
+    }
+}
